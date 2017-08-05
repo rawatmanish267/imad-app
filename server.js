@@ -2,6 +2,52 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var articleOne={
+  title:'Article one | rawatji',  
+  heading:'Article One',
+  date:'Aug 5,2017',
+  content:  `<p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>
+         
+        
+            <p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>
+            <p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>`,
+};
+
+var htmlTemplate=`
+     <html>
+     <head>
+            <title> $(title)
+                </title>
+            <meta name="viewport" content="width_device-width,initial-scale=1">
+            <link href="/ui/style.css" rel="stylesheet">
+            </head>
+    <body>
+           <div class="container">
+        <a href="/"> Home </a>
+        <hr/>
+        <h1>
+        $(heading)
+        </h1>
+        <div>
+            $(date)
+            </div>
+            <div>
+               $(content)
+             </div>
+             </div>
+    </body>
+    </html> `
+;
+
 var app = express();
 app.use(morgan('combined'));
 
