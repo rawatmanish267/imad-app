@@ -28,8 +28,9 @@ var heading=data.heading;
 var date=data.date;
 var content=data.content;
 var htmlTemplate=`
-     <html>
-     <head>
+         <!DOCTYPE html>
+    <html>
+        <head>
             <title> $(title)
                 </title>
             <meta name="viewport" content="width_device-width,initial-scale=1">
@@ -40,18 +41,17 @@ var htmlTemplate=`
         <a href="/"> Home </a>
         <hr/>
         <h1>
-        $(heading)
-        </h1>
+            $(heading) 
+        </h1>    
         <div>
-            $(date)
-            </div>
+           <p> $(date) </p>
+        </div>
             <div>
                $(content)
              </div>
-             </div>
     </body>
-    </html> `
-;
+    </html>
+    `;
 return htmlTemplate;
 }
 var app = express();
