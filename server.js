@@ -19,7 +19,7 @@ var articleOne={
             <p>
                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
                 This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>`,
+            </p>`
 };
 
 function createTemplate(data){
