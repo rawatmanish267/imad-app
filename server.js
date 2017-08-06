@@ -2,7 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var articleOne={
+var articles={
+ articleOne:{
   title:'Article one | rawatji',  
   heading:'Article One',
   date:'Aug 5,2017',
@@ -20,6 +21,41 @@ var articleOne={
                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
                 This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
             </p>`
+},
+articleTwo:{title:'Article two | rawatji',  
+  heading:'Article Two',
+  date:'Aug 6,2017',
+  content:  `<p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>
+         
+        
+            <p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>
+            <p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>`},
+    articleThree:{title:'Article Three | rawatji',  
+  heading:'Article Three',
+  date:'Aug 7,2017',
+  content:  `<p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>
+         
+        
+            <p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>
+            <p>
+               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
+            </p>`}        
 };
 
 function createTemplate(data){
