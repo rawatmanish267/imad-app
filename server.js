@@ -39,7 +39,7 @@ var articles={
                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
                 This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
             </p>`},
-   'articleThree':{title:'Article Three | rawatji',  
+   'article-three':{title:'Article Three | rawatji',  
   heading:'Article Three',
   date:'Aug 7,2017',
   content:  `<p>
