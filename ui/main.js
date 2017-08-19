@@ -18,6 +18,6 @@ button.onClick=function(){
       }
   };
   //make a request
-  request.open("GET","http://http://manishrawat2674.imad.hasura-app.io/counter",true);
+  request.open("GET","http://manishrawat2674.imad.hasura-app.io/counter",true);
   request.send(null);
   };
