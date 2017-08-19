@@ -21,7 +21,7 @@ function exec(){
 var nameInput=document.getElementById('name');
 var name=nameInput.value;
 var submit=document.getElementById('submit_btn');
-submit.onClick=function(){
+function execs(){
     //make a request to server and send name
     
     //capture a list of names and render it as a list
@@ -33,4 +33,4 @@ submit.onClick=function(){
     }
     var ul=document.getElementById('namelist');
     ul.innerHTML=list;
-};
+}
