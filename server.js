@@ -9,62 +9,6 @@ var config={
     host:'db.imad.hasura-app.io',
     password:process.env.DB_PASSWORD
 };
-var articles={
- 'article-one':{
-  title:'Article one | rawatji',  
-  heading:'Article One',
-  date:'Aug 5,2017',
-  content:  `<p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>
-         
-        
-            <p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>
-            <p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>`
-},
-  'article-two':{title:'Article two | rawatji',  
-  heading:'Article Two',
-  date:'Aug 6,2017',
-  content:  `<p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>
-         
-        
-            <p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>
-            <p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>`},
-   'article-three':{title:'Article Three | rawatji',  
-  heading:'Article Three',
-  date:'Aug 7,2017',
-  content:  `<p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>
-         
-        
-            <p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>
-            <p>
-               This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-                This is new paragraph.This is text is amazing.   This is new paragraph.This is text is amazing.  
-            </p>`}        
-};
-
 function createTemplate(data){
 var title=data.title;
 var heading=data.heading;
