@@ -2,6 +2,13 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var crypto=require('crypto');
+var pool=require('pg').Pool;
+var config={
+    user:'manishrawat2674',
+    datbase:'manishrawat2674',
+    host:'db.imad.hasura-app.io',
+    password:process.env.DB_PASSWORD
+};
 var articles={
  'article-one':{
   title:'Article one | rawatji',  
@@ -58,6 +65,21 @@ var articles={
             </p>`}        
 };
 
+var pool=new Pool(config);
+app.get('/test-db',function(req,res){
+   //make a select request
+   //return a response with the result
+   pool.query('SELECT * FROM test',function(err,result){
+      if(err)
+      {
+          res.status(500).send(err.toString());
+      }
+      else
+      {
+        res.send(JSON.stringify(result));    
+      }
+   });
+});
 function createTemplate(data){
 var title=data.title;
 var heading=data.heading;
