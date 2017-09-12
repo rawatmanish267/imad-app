@@ -1,26 +1,8 @@
-function exec(){
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function() 
-    {
-          if (request.readyState === XMLHttpRequest.DONE) 
-          {
-              //Take Some Action
-              if (request.status === 200) 
-                { 
-                    var counter = request.responseText; 
-                    var span = document.getElementById('count');
-                    span.innerHTML = counter.toString();
-                } 
-          } 
-    }; 
-    request.open("GET", "http://manishrawat2674.imad.hasura-app.io/counter", true);
-    request.send(); 
-    console.log('EXECUTED');
-}
-//submit name
+
+//submit username/password to login
 
 var submit=document.getElementById('submit_btn');
-function execs(){
+submit.onclick=function(){
     //make a request to server and send name
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() 
@@ -30,22 +12,24 @@ function execs(){
               //Take Some Action
               if (request.status === 200) 
                     { 
-                            var names=request.responseText;
-                            names=JSON.parse(names);
-                            var list='';
-                            for(var i=0;i<names.length;i++)
-                            {
-                                list+='<li>'+names[i]+'</li>';
-                            }
-                            var ul=document.getElementById('namelist');
-                            ul.innerHTML=list;
-                    } 
+                         console.log("user is logged in");
+                         alert('user logged in');
+                    } else if(request.status===403)
+                    {
+                        alert('username/password invalid');
+                    }else if(request.status===500)
+                    {
+                        alert('unknown error');
+                    }
           } 
     }; 
-    var nameInput=document.getElementById('name');
-    var name=nameInput.value;
-    request.open("GET", "http://manishrawat2674.imad.hasura-app.io/submit-name?name="+name, true);
-    request.send(); 
+    var username=document.getElementById('username').value;
+    var password=document.getElementById('password').value;
+    console.log(username);
+    console.log(password);
+    request.open("POST", "http://manishrawat2674.imad.hasura-app.io/login", true);
+    request.setRequestHeader('Content-Type','application/json');
+    request.send(JSON.stringify({username:username,password:password})); 
     //capture a list of names and render it as a list
    
-}
+};
