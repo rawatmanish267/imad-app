@@ -4,6 +4,7 @@ var path = require('path');
 var crypto=require('crypto');
 var Pool=require('pg').Pool;
 var bodyParser=require('body-parser');
+var session=require('express-session');
 var config={
     user:'manishrawat2674',
     datbase:'manishrawat2674',
@@ -45,6 +46,10 @@ return htmlTemplate;
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret:'someRandomSecretValue',
+    cookie:{maxAge:1000*60*60*24*30}
+}));
 
 var pool=new Pool(config);
 app.get('/test-db',function(req,res){
@@ -121,7 +126,8 @@ app.post('/login',function(req,res){
             var hashedPassword=hash(password,salt);
             if(hashedPassword===dbString)
             {
-            res.send("credentials correct!");
+              req.session.auth={userId:result.rows[0].id};    
+              res.send("credentials correct!");
           } 
           else
           {
@@ -132,6 +138,16 @@ app.post('/login',function(req,res){
     });
 });
 
+app.get('/check-login',function(req,res){
+    if(req.session&&req.session.auth&&req.session.auth.userId)
+    {
+        res.send('you are logged in'+req.session.authuserId.toString());
+    }
+    else
+    {
+        res.send('you are not logged in!');
+    }
+});
 var names=[];
 app.get('/submit-name',function(req, res){
    //get the name from the request
