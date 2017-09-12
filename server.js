@@ -110,7 +110,7 @@ app.post('/login',function(req,res){
         }
         else
         {
-          if(result.row.length===0)
+          if(result.rows.length===0)
           {
               res.send(403).send("username/password is invalid");
           }
